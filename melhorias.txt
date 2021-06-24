@@ -1,0 +1,3 @@
+1 - substituir alert por toast
+2 - substituir window.confirm() por modal
+3 - logout
