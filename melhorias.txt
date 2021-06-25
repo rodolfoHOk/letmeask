@@ -1,3 +1,29 @@
+firebase deploy site:
+https://letmeask-f27ed.web.app/
+
+Levar para o próximo nível:
+
+a) Responsividade
+  https://www.youtube.com/watch?v=H91DhKPjhPk
+
+b) Tema dark
+  toogle light dark
+
+c) Versão PWA - Progressive Web Application
+
+d) Outros banco de dados
+  supabase
+  firestore
+
+e) Styled Components
+
+f) Eslint / Prettier
+  https://www.youtube.com/watch?v=1nVUfZg2dSA
+
+g) Github
+
+
 1 - substituir alert por toast
 2 - substituir window.confirm() por modal
 3 - logout
+
