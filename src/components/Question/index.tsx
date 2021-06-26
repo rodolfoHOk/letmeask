@@ -1,6 +1,89 @@
-import { ReactNode } from 'react';
-import cx from 'classnames';
-import './styles.scss';
+import { ReactNode } from "react";
+import cx from "classnames";
+import styled from "styled-components";
+
+const QuestionWrapper = styled.div`
+  background: #fefefe;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  padding: 24px;
+
+  & + .question {
+    margin-top: 8px;
+  }
+
+  &.highlighted {
+    background: #f4f0ff;
+    border: 1px solid #835afd;
+
+    footer .user-info span {
+      color: #29292e;
+    }
+  }
+
+  &.answered {
+    background: #dbdcdd;
+  }
+
+  p {
+    color: #29292e;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+
+    .user-info {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+      }
+
+      span {
+        margin-left: 8px;
+        color: #737380;
+        font-size: 14px;
+      }
+    }
+
+    > div {
+      display: flex;
+      gap: 16px;
+    }
+
+    button {
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      gap: 8px;
+      transition: filter 0.2s;
+
+      &.like-button {
+        display: flex;
+        align-items: flex-end;
+        color: #737380;
+
+        &.liked {
+          color: #835afd;
+
+          svg path {
+            stroke: #835afd;
+          }
+        }
+      }
+
+      &:hover {
+        filter: brightness(0.7);
+      }
+    }
+  }
+`;
 
 type QuestionProps = {
   content: string;
@@ -11,21 +94,21 @@ type QuestionProps = {
   children?: ReactNode;
   isAnswered?: boolean;
   isHighlighted?: boolean;
-}
+};
 
-export function Question({ 
+export function Question({
   content,
   author,
   children,
   isAnswered = false,
-  isHighlighted = false
- }: QuestionProps) {
+  isHighlighted = false,
+}: QuestionProps) {
   return (
-    <div 
+    <QuestionWrapper
       className={cx(
-        'question',
-        { 'answered': isAnswered },
-        { 'highlighted': isHighlighted && !isAnswered }
+        "question",
+        { answered: isAnswered },
+        { highlighted: isHighlighted && !isAnswered }
       )}
     >
       <p>{content}</p>
@@ -36,6 +119,6 @@ export function Question({
         </div>
         <div>{children}</div>
       </footer>
-    </div>
+    </QuestionWrapper>
   );
 }

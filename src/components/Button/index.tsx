@@ -1,4 +1,7 @@
-.button {
+import { ButtonHTMLAttributes } from "react";
+import styled from "styled-components";
+
+const ButtonWrapper = styled.button`
   height: 50px;
   border-radius: 8px;
   font-weight: 500;
@@ -33,4 +36,19 @@
     opacity: 0.6;
     cursor: not-allowed;
   }
+`;
+
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  isOutlined?: boolean;
+};
+
+export function Button({ isOutlined = false, ...props }: ButtonProps) {
+  return (
+    <ButtonWrapper
+      type="button"
+      className={`button ${isOutlined ? "outlined" : ""}`}
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...props}
+    />
+  );
 }

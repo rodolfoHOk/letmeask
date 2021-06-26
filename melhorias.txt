@@ -15,12 +15,12 @@ d) Outros banco de dados
   supabase
   firestore
 
-e) Styled Components
+e) Styled Components OK
 
-f) Eslint / Prettier
+f) Eslint / Prettier OK
   https://www.youtube.com/watch?v=1nVUfZg2dSA
 
-g) Github
+g) Github OK
 
 
 1 - substituir alert por toast
